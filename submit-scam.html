@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Scam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Submit Scam</h1>
+    <form id="submit-scam-form">
+        <label for="scam-type">Scam Type:</label>
+        <select id="scam-type" name="scam-type">
+            <option value="">Select a type</option>
+            <option value="phishing">Phishing</option>
+            <option value="fraud">Fraud</option>
+            <option value="identity-theft">Identity Theft</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br><br>
+        <label for="scam-description">Scam Description:</label>
+        <textarea id="scam-description" name="scam-description"></textarea>
+        <br><br>
+        <button type="submit">Submit Scam</button>
+    </form>
+
+    <script>
+        // Add event listener to form submission
+        document.querySelector('#submit-scam-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const scamData = {
+                type: formData.get('scam-type'),
+                description: formData.get('scam-description'),
+                date: new Date().toISOString()
+            };
+            // Add the new scam data to the scam-data.json file
+            // (this will be updated manually for now)
+            console.log(`Scam submitted: ${scamData.type} - ${scamData.description}`);
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
