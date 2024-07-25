@@ -1,0 +1,13 @@
+[
+    {
+        "type": "phishing",
+        "description": "Example phishing scam",
+        "date": "2023-02-20"
+    },
+    {
+        "type": "fraud",
+        "description": "Example fraud scam",
+        "date": "2023-02-22"
+    },
+    // Add more scam data here
+]
